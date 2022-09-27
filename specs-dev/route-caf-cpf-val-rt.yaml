@@ -14,10 +14,10 @@ spec:
   ingressconfig:
     annotations: null
     host: '*'
-    path: /webhook/caf/score-validation
+    path: /webhook/caf/score_validation
     tls: ""
   method: ""
   methods:
   - POST
   prefix: ""
-  relativeurl: /webhook/caf/score-validation
+  relativeurl: /webhook/caf/score_validation
