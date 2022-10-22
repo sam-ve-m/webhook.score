@@ -1,0 +1,74 @@
+apiVersion: fission.io/v1
+kind: Environment
+metadata:
+  creationTimestamp: null
+  name: caf-score-val-env
+  namespace: default
+spec:
+  builder:
+    command: build
+    image: nexus.sigame.com.br/fission-builder-3.8:0.0.1
+  imagepullsecret: "nexus-v3"
+  keeparchive: false
+  resources: {}
+  runtime:
+    image: nexus.sigame.com.br/fission-async:0.1.7
+    podspec:
+      containers:
+        - name: caf-score-val-env
+          env:
+            - name: ASGI_FRAMEWORK
+              value: "HYPERCORN"
+            - name: URL_BUREAU_GET_DETAILS
+              value: "https://api.beta.combateafraude.com/v1/transactions/{}"
+            - name: API_TOKEN_BUREAU
+              value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUyZDU1MzFiMzBhZjAwMDlhNjU4ZTgiLCJpYXQiOjE2NTkwMzI5MTZ9.DYsONtzeSgQXbEl4Cr3k3HZJ0tIxtuUR8hQIepAiScE"
+            - name: HEIMDALL_FILE_BUCKET_NAME
+              value: "heimdall_rsa"
+            - name: HEIMDALL_AWS_ACCESS_KEY_ID
+              value: "AKIATZVFXI25USQWCS5O"
+            - name: HEIMDALL_AWS_SECRET_ACCESS_KEY
+              value: "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"
+            - name: HEIMDALL_REGION_NAME
+              value: "sa-east-1"
+            - name: HEIMDALL_BUCKET_NAME_KEY
+              value: "auth-gateway-keys-uat"
+            - name: HEIMDALL_AWS_BUCKET_USERS_FILES
+              value: "dtvm-users-files-uat"
+            - name: HEIMDALL_AWS_BUCKET_TERMS
+              value: "dtvm-terms-uat"
+            - name: HEIMDALL_JWT_REQUIRED_FIELDS
+              value: "[]"
+            - name: HEIMDALL_REDIS_URL
+              value: "redis://heimdal:LLOnmUUffhaUHnewIz@oci-sit-external-redis:6379?db=1"
+            - name: ETRIA_LOG_LEVEL
+              value: "INFO"
+            - name: ROOT_LOG_LEVEL
+              value: "INFO"
+            - name: REDIS_HOST_URL
+              value: "redis://jormungandr:Mdn45oodsanPOhbrewbDS@172.30.19.183:6379"
+            - name: REDIS_CACHE_DB
+              value: "1"
+            - name: REDIS_PORTFOLIO_DB
+              value: "0"
+            - name: MONGO_CONNECTION_URL
+              value: "mongodb://jormungandr:MMhsdanNNds32Malmnwqyrte@172.30.18.223:41000,172.30.19.240:41000,172.30.19.71:41000/?authSource=admin&replicaSet=rslionx&readPreference=secondary&ssl=false"
+            - name: MONGO_DATABASE_LIONX
+              value: "lionx"
+            - name: MONGODB_COLLECTION_USERS
+              value: "users"
+            - name: MONGO_COLLECTION_BUREAU
+              value: "bureau"
+            - name: REDIS_HOST_ACCESS_URL
+              value: "redis://jormungandr:Mdn45oodsanPOhbrewbDS@172.30.19.183:6379?db=1"
+            - name: PERSEPHONE_TOPIC
+              value: "sphinx-persephone.user.crud"
+            - name: PERSEPHONE_PARTITION
+              value: "23"
+            - name: PERSEPHONE_SCHEMA
+              value: "score_validation_status"
+            - name: PERSEPHONE_KAFKA_BROKERS
+              value: "cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+            - name: IARA_KAFKA_BROKERS
+              value: "cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+  version: 3

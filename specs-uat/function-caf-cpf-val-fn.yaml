@@ -1,0 +1,55 @@
+include:
+- ./func/*
+kind: ArchiveUploadSpec
+name: func-RZOv
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: caf-score-val-fn-72ce40e4-d3a8-4893-9cf3-abb465ec24cf
+  namespace: default
+spec:
+  deployment:
+    checksum: {}
+  environment:
+    name: caf-score-val-env
+    namespace: default
+  source:
+    checksum: {}
+    type: url
+    url: archive://func-RZOv
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2022-09-19T12:26:21Z"
+
+---
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: caf-score-val-fn
+  namespace: default
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: newdeploy
+      MaxScale: 3
+      MinScale: 1
+      SpecializationTimeout: 120
+      TargetCPUPercent: 80
+    StrategyType: execution
+  concurrency: 500
+  environment:
+    name: caf-score-val-env
+    namespace: default
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    functionName: main.caf_transaction
+    packageref:
+      name: caf-score-val-fn-72ce40e4-d3a8-4893-9cf3-abb465ec24cf
+      namespace: default
+  requestsPerPod: 1
+  resources: {}
