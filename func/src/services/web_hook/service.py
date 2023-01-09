@@ -1,10 +1,10 @@
 import asyncio
 
-from src.domain.validator.webhook.validator import WebHookMessage
-from src.repositories.bureau_transactions.repository import BureauTransactionRepository
-from src.repositories.user.repository import UserRepository
-from src.transport.iara.transport import BureauApiTransport
-from src.transport.persephone.transport import SendToPersephone
+from func.src.domain.validator.webhook.validator import WebHookMessage
+from func.src.repositories.bureau_transactions.repository import BureauTransactionRepository
+from func.src.repositories.user.repository import UserRepository
+from func.src.transport.iara.transport import BureauApiTransport
+from func.src.transport.persephone.transport import SendToPersephone
 
 
 class BureauValidationService:

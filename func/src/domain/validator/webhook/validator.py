@@ -1,8 +1,8 @@
 import orjson
 from dataclasses import dataclass
 
-from src.domain.enums.bureau.enum import BureauType, BureauStatus
-from src.domain.exceptions.exceptions import InvalidMessageTypeReceived, InvalidStatusReceived
+from func.src.domain.enums.bureau.enum import BureauType, BureauStatus
+from func.src.domain.exceptions.exceptions import InvalidMessageTypeReceived, InvalidStatusReceived
 
 
 @dataclass

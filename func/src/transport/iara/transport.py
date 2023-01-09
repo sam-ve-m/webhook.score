@@ -1,6 +1,6 @@
 from iara_client import Iara, IaraTopics
 
-from src.domain.exceptions.exceptions import ErrorSendingToIaraDatailCpfValidation
+from func.src.domain.exceptions.exceptions import ErrorSendingToIaraDatailCpfValidation
 
 
 class BureauApiTransport:
