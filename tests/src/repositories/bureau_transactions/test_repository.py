@@ -3,8 +3,8 @@ from unittest.mock import patch, call, AsyncMock, MagicMock
 import pytest
 from decouple import Config
 
-from src.domain.exceptions.exceptions import TransactionNotFound, UniqueIdNotFound, TransactionWasNotUpdated
-from src.repositories.bureau_transactions.repository import BureauTransactionRepository
+from func.src.domain.exceptions.exceptions import TransactionNotFound, UniqueIdNotFound, TransactionWasNotUpdated
+from func.src.repositories.bureau_transactions.repository import BureauTransactionRepository
 
 dummy_env = "dummy env"
 fake_collection = AsyncMock()

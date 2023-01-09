@@ -14,13 +14,13 @@ with patch.object(RepositoryEnv, "__init__", return_value=None):
         with patch.object(Config, "__call__"):
             with patch.object(logging.config, "dictConfig"):
                 from etria_logger import Gladsheim
-                from main import caf_transaction
-                from src.domain.enums.status_code.enum import InternalCode
-                from src.domain.models.response.model import ResponseModel
-                from src.domain.exceptions.exceptions import UserWasNotUpdated, TransactionNotFound, \
+                from func.main import caf_transaction
+                from func.src.domain.enums.status_code.enum import InternalCode
+                from func.src.domain.models.response.model import ResponseModel
+                from func.src.domain.exceptions.exceptions import UserWasNotUpdated, TransactionNotFound, \
     ErrorSendingToIaraDatailCpfValidation, InvalidStatusReceived
-                from src.services.web_hook.service import BureauValidationService
-                from src.domain.validator.webhook.validator import WebHookMessage
+                from func.src.services.web_hook.service import BureauValidationService
+                from func.src.domain.validator.webhook.validator import WebHookMessage
 
 user_was_not_updated_case = (
     UserWasNotUpdated(),

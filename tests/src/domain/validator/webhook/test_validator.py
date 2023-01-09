@@ -2,9 +2,9 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from src.domain.enums.bureau.enum import BureauType, BureauStatus
-from src.domain.validator.webhook.validator import WebHookMessage
-from src.domain.exceptions.exceptions import InvalidMessageTypeReceived, InvalidStatusReceived
+from func.src.domain.enums.bureau.enum import BureauType, BureauStatus
+from func.src.domain.validator.webhook.validator import WebHookMessage
+from func.src.domain.exceptions.exceptions import InvalidMessageTypeReceived, InvalidStatusReceived
 
 
 stub_request_body = MagicMock()
