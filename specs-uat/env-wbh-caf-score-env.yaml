@@ -1,0 +1,48 @@
+apiVersion: fission.io/v1
+kind: Environment
+metadata:
+  creationTimestamp: null
+  name: wbh-caf-score-env
+  namespace: default
+spec:
+  builder:
+    container:
+      name: ""
+      resources: {}
+  imagepullsecret: nexus-v3
+  keeparchive: false
+  resources: {}
+  runtime:
+    container:
+      name: ""
+      resources: {}
+    image: nexus.sigame.com.br/fission-webhook-caf-score:0.1.0-0
+    podspec:
+      containers:
+        - name: wbh-caf-score-env
+          env:
+            - name: ASGI_FRAMEWORK
+              value: "HYPERCORN"
+            - name: ETRIA_LOG_LEVEL
+              value: "INFO"
+            - name: ROOT_LOG_LEVEL
+              value: "INFO"
+            - name: MONGO_CONNECTION_URL
+              value: "mongodb://jormungandr:MMhsdanNNds32Malmnwqyrte@172.30.18.223:41000,172.30.19.240:41000,172.30.19.71:41000/?authSource=admin&replicaSet=rslionx&readPreference=secondary&ssl=false"
+            - name: MONGO_DATABASE_LIONX
+              value: "lionx"
+            - name: MONGODB_COLLECTION_USERS
+              value: "users"
+            - name: MONGO_COLLECTION_BUREAU
+              value: "bureau"
+            - name: PERSEPHONE_TOPIC
+              value: "sphinx-persephone.user.crud"
+            - name: PERSEPHONE_PARTITION
+              value: "23"
+            - name: PERSEPHONE_SCHEMA
+              value: "score_validation_status"
+            - name: PERSEPHONE_KAFKA_BROKERS
+              value: "cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+            - name: IARA_KAFKA_BROKERS
+              value: "cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+  version: 3
