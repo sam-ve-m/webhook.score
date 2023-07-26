@@ -3,8 +3,8 @@ from unittest.mock import patch, call, AsyncMock
 import pytest
 from decouple import Config
 
-from src.domain.exceptions.exceptions import UserWasNotUpdated
-from src.repositories.user.repository import UserRepository
+from func.src.domain.exceptions.exceptions import UserWasNotUpdated
+from func.src.repositories.user.repository import UserRepository
 
 dummy_env = "dummy env"
 fake_collection = AsyncMock()

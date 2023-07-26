@@ -3,7 +3,7 @@ from etria_logger import Gladsheim
 from motor import motor_asyncio
 from motor.motor_asyncio import AsyncIOMotorCollection
 
-from src.domain.exceptions.exceptions import InitializeError
+from func.src.domain.exceptions.exceptions import InitializeError
 
 
 class MongoDBInfrastructure:

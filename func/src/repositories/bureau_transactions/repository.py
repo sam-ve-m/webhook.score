@@ -1,8 +1,8 @@
 from decouple import config
 
-from src.domain.exceptions.exceptions import TransactionNotFound, UniqueIdNotFound, TransactionWasNotUpdated
-from src.domain.validator.webhook.validator import WebHookMessage
-from src.infrastructure.mongo_db.infrastructure import MongoDBInfrastructure
+from func.src.domain.exceptions.exceptions import TransactionNotFound, UniqueIdNotFound, TransactionWasNotUpdated
+from func.src.domain.validator.webhook.validator import WebHookMessage
+from func.src.infrastructure.mongo_db.infrastructure import MongoDBInfrastructure
 
 
 class BureauTransactionRepository(MongoDBInfrastructure):

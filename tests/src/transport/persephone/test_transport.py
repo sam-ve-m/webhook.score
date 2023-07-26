@@ -7,8 +7,8 @@ from etria_logger import Gladsheim
 from persephone_client import Persephone
 
 # PROJECT IMPORTS
-from src.domain.exceptions.exceptions import NotSentToPersephone
-from src.transport.persephone.transport import SendToPersephone
+from func.src.domain.exceptions.exceptions import NotSentToPersephone
+from func.src.transport.persephone.transport import SendToPersephone
 
 dummy_env = 0
 dummy_unique_id = "unique id"

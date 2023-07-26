@@ -4,8 +4,8 @@ from etria_logger import Gladsheim
 from persephone_client import Persephone
 
 # PROJECT IMPORTS
-from src.domain.exceptions.exceptions import NotSentToPersephone
-from src.domain.validator.webhook.validator import WebHookMessage
+from func.src.domain.exceptions.exceptions import NotSentToPersephone
+from func.src.domain.validator.webhook.validator import WebHookMessage
 
 
 class SendToPersephone:

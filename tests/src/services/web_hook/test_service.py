@@ -3,11 +3,11 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from src.repositories.bureau_transactions.repository import BureauTransactionRepository
-from src.repositories.user.repository import UserRepository
-from src.services.web_hook.service import BureauValidationService
-from src.transport.persephone.transport import SendToPersephone
-from src.transport.iara.transport import BureauApiTransport
+from func.src.repositories.bureau_transactions.repository import BureauTransactionRepository
+from func.src.repositories.user.repository import UserRepository
+from func.src.services.web_hook.service import BureauValidationService
+from func.src.transport.persephone.transport import SendToPersephone
+from func.src.transport.iara.transport import BureauApiTransport
 
 
 dummy_webhook_message = MagicMock()

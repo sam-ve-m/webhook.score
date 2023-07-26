@@ -3,8 +3,8 @@ from unittest.mock import patch
 import pytest
 from iara_client import Iara, IaraTopics
 
-from src.domain.exceptions.exceptions import ErrorSendingToIaraDatailCpfValidation
-from src.transport.iara.transport import BureauApiTransport
+from func.src.domain.exceptions.exceptions import ErrorSendingToIaraDatailCpfValidation
+from func.src.transport.iara.transport import BureauApiTransport
 
 dummy_value = "dummy value"
 
